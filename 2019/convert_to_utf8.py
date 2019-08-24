@@ -2,6 +2,8 @@
 import os
 import chardet
 import codecs
+
+
 # 批量转换文件夹中的index.shtml为utf-8编码
 def run():
     # 第一步，读取所有的子文件夹，形成地址列表
@@ -67,6 +69,5 @@ def convert_to_utf8(gb2312_list):
         print(str(i))
 
 
-
 if __name__ == '__main__':
-    run();
+    run()

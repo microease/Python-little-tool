@@ -13,7 +13,7 @@ for a in soup.find_all('a'):
     links.append(link)
 
 print(links)
-zhuanti =[]
+zhuanti = []
 for i in links:
     if str(i).startswith("http://www.szffmr.com/zhuanti/"):
         zhuanti.append(i)
