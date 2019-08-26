@@ -77,6 +77,5 @@ def convert_to_utf8(gb2312_list):
             print("IO ERROR:".format(err))
     print("本次转换%d个文件" % jishuqi)
 
-
 if __name__ == '__main__':
     run()
