@@ -3,7 +3,7 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-url = 'http://www.szffmr.com/zhuanti/2019summer/'
+url = 'XXX'
 r = requests.get(url)
 r.encoding = 'gb2312'
 soup = BeautifulSoup(r.text, 'lxml')
@@ -13,8 +13,8 @@ for a in soup.find_all('a'):
     links.append(link)
 
 print(links)
-zhuanti =[]
+zhuanti = []
 for i in links:
-    if str(i).startswith("http://www.szffmr.com/zhuanti/"):
+    if str(i).startswith("XXX"):
         zhuanti.append(i)
 print(zhuanti)

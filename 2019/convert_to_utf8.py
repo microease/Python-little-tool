@@ -2,6 +2,8 @@
 import os
 import chardet
 import codecs
+
+
 # 批量转换文件夹中的index.shtml为utf-8编码
 def run():
     # 第一步，读取所有的子文件夹，形成地址列表
@@ -58,15 +60,23 @@ def get_all_gb2312(index_shtml):
             gb2312_list.append(i)
     print("GB2312列表如下")
     print(gb2312_list)
+    return gb2312_list
 
 
 def convert_to_utf8(gb2312_list):
     to_coding_type = "utf-8"
-    from_coding_type = "GB2312"
+    from_coding_type = "ansi"
+    jishuqi = 0
     for i in gb2312_list:
-        print(str(i))
-
+        try:
+            f = codecs.open(i, "rb", from_coding_type)
+            new_content = f.read()
+            codecs.open(i, "wb", to_coding_type).write(new_content)
+            jishuqi += 1
+        except IOError as err:
+            print("IO ERROR:".format(err))
+    print("本次转换%d个文件" % jishuqi)
 
 
 if __name__ == '__main__':
-    run();
+    run()
