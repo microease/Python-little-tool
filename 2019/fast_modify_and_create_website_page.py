@@ -10,7 +10,7 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("D:\专题\非凡之夜\\")  # 此处填写文件夹路径
+    file_path = find_file("D:\非凡之夜\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
@@ -21,8 +21,9 @@ def run():
     new_dir_name = "feifannight"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
-    convert_to_gb2312(file_path)
+    file_path = convert_to_gb2312(file_path)
     # 第六步:生成其他站的文件，并对应好
+    create_new_file(file_path)
 
 
 def find_file(dir_path):
@@ -94,7 +95,13 @@ def convert_to_gb2312(file_path):
     except IOError as err:
         print("IO ERROR:".format(err))
     print("转换编码成功！")
+    return file_path
 
+
+def create_new_file(file_path):
+    desktop = "C:\Users\micro\Desktop\\"
+    if os.path.exists(desktop):
+        print("桌面文件夹存在")
 
 if __name__ == '__main__':
     run()
