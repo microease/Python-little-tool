@@ -23,7 +23,7 @@ def run():
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
     # 第六步:生成其他站的文件，并对应好
-    create_new_file(file_path)
+    # create_new_file(file_path)
 
 
 def find_file(dir_path):
@@ -98,10 +98,10 @@ def convert_to_gb2312(file_path):
     return file_path
 
 
-def create_new_file(file_path):
-    desktop = "C:\Users\micro\Desktop\\"
-    if os.path.exists(desktop):
-        print("桌面文件夹存在")
+# def create_new_file(file_path):
+#     desktop = "C:\Users\micro\Desktop\\"
+#     if os.path.exists(desktop):
+#         print("桌面文件夹存在")
 
 if __name__ == '__main__':
     run()

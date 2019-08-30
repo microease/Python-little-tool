@@ -3,7 +3,7 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-url = 'XXX'
+url = 'http://mm.szffmr.com/'
 r = requests.get(url)
 r.encoding = 'gb2312'
 soup = BeautifulSoup(r.text, 'lxml')
@@ -15,6 +15,6 @@ for a in soup.find_all('a'):
 print(links)
 zhuanti = []
 for i in links:
-    if str(i).startswith("XXX"):
+    if str(i).startswith("zhuanti/"):
         zhuanti.append(i)
 print(zhuanti)
