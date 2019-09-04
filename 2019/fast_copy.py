@@ -10,13 +10,13 @@ import shutil
 def run():
     # 第一步 根据桌面地址创建好对应的文件夹
     # 在这里输入桌面文件夹地址
-    desktop = "/Users/huxiaoyi/Desktop"
+    desktop = "C:\\Users\micro\Desktop"
     # 在这里输入你想要的文件夹名称
     new_dir_name = "201909"
     mszffmrcom, mmszffmrcom, m88833222com, mffyycc = mkdir(desktop, new_dir_name)
     # 第二步 根据读取的文件夹文件复制所有文件到每个网站对应的文件夹中 返回四个index.html地址
     # 在这里输入需要复制的专题地址
-    wait_copy_dir = "/Users/huxiaoyi/Desktop/201909"
+    wait_copy_dir = "C:\\Users\micro\Desktop\9月特惠修改版\\"
     mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex = \
         copy(wait_copy_dir, mszffmrcom, mmszffmrcom, m88833222com, mffyycc)
     # 第三步 分别修改四个网站的文件夹中index.html中的链接。
@@ -33,10 +33,10 @@ def mkdir(desktop, new_dir_name):
 
 def copy(wait_copy_dir, mszffmrcom, mmszffmrcom, m88833222com, mffyycc):
     if (not os.path.exists(mszffmrcom)):
-        shutil.copytree('/Users/huxiaoyi/Desktop/201909', mszffmrcom)
-        shutil.copytree('/Users/huxiaoyi/Desktop/201909', mmszffmrcom)
-        shutil.copytree('/Users/huxiaoyi/Desktop/201909', m88833222com)
-        shutil.copytree('/Users/huxiaoyi/Desktop/201909', mffyycc)
+        shutil.copytree(wait_copy_dir, mszffmrcom)
+        shutil.copytree(wait_copy_dir, mmszffmrcom)
+        shutil.copytree(wait_copy_dir, m88833222com)
+        shutil.copytree(wait_copy_dir, mffyycc)
     else:
         print("地址存在，删除文件夹后重试")
     mszffmrcomindex = mszffmrcom + "/index.html"
@@ -57,31 +57,31 @@ def modify_link(mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccind
         m88833222com_file_data = ""
         mffyycc_file_data = ""
         # 修改mmszffmrcom
-        with open(mmszffmrcomindex, "r", encoding="GB2312") as f:
+        with open(mmszffmrcomindex, "r", encoding="GB18030") as f:
             for line in f:
                 if old_str_1 in line:
                     print("发现m.szffmr.com,修改ing")
                     line = line.replace(old_str_1, new_str_1)
                 mmszffmrcom_file_data += line
-        with open(mmszffmrcomindex, "w", encoding="GB2312") as f:
+        with open(mmszffmrcomindex, "w", encoding="GB18030") as f:
             f.write(mmszffmrcom_file_data)
         # 修改m.88833222.com
-        with open(m88833222comindex, "r", encoding="GB2312") as f:
+        with open(m88833222comindex, "r", encoding="GB18030") as f:
             for line in f:
                 if old_str_1 in line:
                     print("发现m.szffmr.com,修改ing")
                     line = line.replace(old_str_1, new_str_2)
                 m88833222com_file_data += line
-        with open(m88833222comindex, "w", encoding="GB2312") as f:
+        with open(m88833222comindex, "w", encoding="GB18030") as f:
             f.write(m88833222com_file_data)
         # 修改mffyyccindex
-        with open(mffyyccindex, "r", encoding="GB2312") as f:
+        with open(mffyyccindex, "r", encoding="GB18030") as f:
             for line in f:
                 if old_str_1 in line:
                     print("发现m.szffmr.com,修改ing")
                     line = line.replace(old_str_1, new_str_3)
                 mffyycc_file_data += line
-        with open(mffyyccindex, "w", encoding="GB2312") as f:
+        with open(mffyyccindex, "w", encoding="GB18030") as f:
             f.write(mffyycc_file_data)
 
 

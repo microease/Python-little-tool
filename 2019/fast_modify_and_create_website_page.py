@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("D:\非凡之夜\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\9月特惠修改版\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "非凡魅力之夜VIP客户赫本音乐工厂答谢会_点燃非凡引爆全场_深圳非凡医疗美容医院"
-    keywords = "非凡,魅力之夜,赫本酒吧,音乐"
-    description = "8月28日非凡魅力之夜VIP客户赫本音乐工厂答谢会，打造深圳高颜值轰趴！燃爆全场极致体验，这里有魅力惊喜、网红打卡圣地、超嗨劲爆DJ、尖货畅享、趣味互动等等，想你所想玩你所玩！赶紧报名加入~美丽热线：0755-82281088"
-    new_dir_name = "feifannight"
+    title = "非凡金秋“9”耀你美_9月整形优惠_深圳非凡医疗美容医院"
+    keywords = "金秋、九月、开学、优惠"
+    description = "非凡金秋9耀你美，祛痘68元  脱毛99 元  祛斑200元  隐形双眼皮480元  祛妊娠纹980元  牙齿冷光美白1280元起。美丽热线：0755-82281088"
+    new_dir_name = "201909"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
@@ -52,7 +52,7 @@ def modify_file(file_path, new_dir_name, title, keywords, description):
     new_str_5 = '''<meta charset="gb2312">\n<base href="http://m.szffmr.com/zhuanti/%s/">''' % new_dir_name
     old_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">'''
     new_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">\n<meta name="format-detection" content="telephone=no" />\n<meta content="yes" name="apple-mobile-web-app-capable" />\n<meta content="black" name="apple-mobile-web-app-status-bar-style" />'''
-    old_str_7 = '''<title>超皮秒</title>'''
+    old_str_7 = '''<title>陌陌信息流</title>'''
     new_str_7 = '''<title>%s</title>\n<meta name="keywords" content="%s">\n<meta name="description" content="%s">''' % (
         title, keywords, description)
     file_data = ""
@@ -86,7 +86,7 @@ def modify_file(file_path, new_dir_name, title, keywords, description):
 
 
 def convert_to_gb2312(file_path):
-    to_coding_type = "GB2312"
+    to_coding_type = "GB18030"
     from_coding_type = "utf-8"
     try:
         f = codecs.open(file_path, "rb", from_coding_type)

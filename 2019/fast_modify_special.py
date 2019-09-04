@@ -1,19 +1,19 @@
-# coding=utf-8
+# coding:utf-8
+# File Name：     fast_modify_special
+# Description :
+# Author :       micro
+# Date：          2019/9/3
 import os
-import chardet
-import codecs
 
 
-# 批量转换文件夹中的index.shtml为utf-8编码
+# 批量修改文件夹中的index.shtml
 def run():
     # 第一步，读取所有的子文件夹，形成地址列表
     all_child_dir = get_all_child_dir("C:\\Users\micro\Desktop\zt")
     # 第二步,判断路径下的index.shtml是否存在，如果存在加入新的index.shtml列表
     index_shtml = get_all_index_shtml(all_child_dir)
-    # 第三步 自动判断index.shtml文件的编码，如果为gb2312，加入新列表
-    gb2312_list = get_all_gb2312(index_shtml)
     # 第四步 转换gb2312的文件列表为utf-8
-    convert_to_utf8(gb2312_list)
+    index_shtml = modify_file(index_shtml)
 
 
 def get_all_child_dir(path):
@@ -46,36 +46,21 @@ def get_all_index_shtml(all_child_dir):
     return index_shtml
 
 
-def get_all_gb2312(index_shtml):
-    gb2312_list = []
+def modify_file(index_shtml):
+    old_str_1 = '''/zt/'''
+    new_str_1 = '''/mzt/'''
     for i in index_shtml:
-        # with open(i, 'rb') as f:
-        #     if chardet.detect(f.read())['encoding'] == "GB2312":
-        #         gb2312_list.append(f)
-        f = open(i, "rb")
-        data = f.read()
-        print(chardet.detect(data)["encoding"])
-        # 如果文件为Gb2312加入新列表
-        if (chardet.detect(data)["encoding"] == "GB2312"):
-            gb2312_list.append(i)
-    print("GB2312列表如下")
-    print(gb2312_list)
-    return gb2312_list
+        file_data = ""
+        with open(i, "r", encoding="utf-8") as f:
+            for line in f:
+                if old_str_1 in line:
+                    print("发现file,修改ing")
+                    line = line.replace(old_str_1, new_str_1)
+                file_data += line
+        with open(i, "w", encoding="utf-8") as f:
+            f.write(file_data)
+    return index_shtml
 
-
-def convert_to_utf8(gb2312_list):
-    to_coding_type = "utf-8"
-    from_coding_type = "ansi"
-    jishuqi = 0
-    for i in gb2312_list:
-        try:
-            f = codecs.open(i, "rb", from_coding_type)
-            new_content = f.read()
-            codecs.open(i, "wb", to_coding_type).write(new_content)
-            jishuqi += 1
-        except IOError as err:
-            print("IO ERROR:".format(err))
-    print("本次转换%d个文件" % jishuqi)
 
 if __name__ == '__main__':
     run()
