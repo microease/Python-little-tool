@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\9月特惠修改版\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\闭馆\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "非凡金秋“9”耀你美_9月整形优惠_深圳非凡医疗美容医院"
-    keywords = "金秋、九月、开学、优惠"
-    description = "非凡金秋9耀你美，祛痘68元  脱毛99 元  祛斑200元  隐形双眼皮480元  祛妊娠纹980元  牙齿冷光美白1280元起。美丽热线：0755-82281088"
-    new_dir_name = "201909"
+    title = "喜迎国庆·美丽大惠战-疯狂钜惠三天"
+    keywords = "国庆、整形优惠、钜惠、水光针、双眼皮、祛痘"
+    description = "喜迎国庆，美丽大惠战，无底降价0元竞拍，爆款塑美项目全城冰点价，疯狂钜惠三天。美丽热线：0755-82281088"
+    new_dir_name = "2019mldhz"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
@@ -52,7 +52,7 @@ def modify_file(file_path, new_dir_name, title, keywords, description):
     new_str_5 = '''<meta charset="gb2312">\n<base href="http://m.szffmr.com/zhuanti/%s/">''' % new_dir_name
     old_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">'''
     new_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">\n<meta name="format-detection" content="telephone=no" />\n<meta content="yes" name="apple-mobile-web-app-capable" />\n<meta content="black" name="apple-mobile-web-app-status-bar-style" />'''
-    old_str_7 = '''<title>陌陌信息流</title>'''
+    old_str_7 = '''<title>闭馆</title>'''
     new_str_7 = '''<title>%s</title>\n<meta name="keywords" content="%s">\n<meta name="description" content="%s">''' % (
         title, keywords, description)
     file_data = ""

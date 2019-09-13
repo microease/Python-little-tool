@@ -9,7 +9,7 @@ import os
 # 批量修改文件夹中的index.shtml
 def run():
     # 第一步，读取所有的子文件夹，形成地址列表
-    all_child_dir = get_all_child_dir("C:\\Users\micro\Desktop\zt")
+    all_child_dir = get_all_child_dir("C:\\Users\micro\Desktop\闭馆")
     # 第二步,判断路径下的index.shtml是否存在，如果存在加入新的index.shtml列表
     index_shtml = get_all_index_shtml(all_child_dir)
     # 第四步 转换gb2312的文件列表为utf-8
