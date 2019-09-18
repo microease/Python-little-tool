@@ -11,12 +11,12 @@ from xlutils.copy import copy
 
 def run():
     #  第一步 遍历读取文件夹，获取每个csv的路径
-    path = r'C:\Users\micro\Desktop\2018流量'
+    path = r'C:\Users\micro\Desktop\2016流量'
     files = glob.glob(os.path.join(path, "*.csv"))
     # 第二步 分别遍历每个文件,并获取所需要网站的UV
     all_result = []
     for file in files:
-        csvFile = open(file, "r")
+        csvFile = open(file, "r", encoding='gb18030', errors='ignore')
         reader = csv.reader(csvFile)
         for item in reader:
             if (len(item) > 1):
@@ -34,7 +34,7 @@ def run():
                     www_ffyy_cc_uv = item[2]
         result = [www_szffmr_com_uv, m_szffmr_com_uv, mm_szffmr_com_uv, m_88833222_com_uv, m_ffyy_cc_uv, www_ffyy_cc_uv]
         all_result.append(result)
-    write_excel_xls_append(r"C:\Users\micro\Desktop\2018.xls", all_result)
+    write_excel_xls_append(r"C:\Users\micro\Desktop\2016.xlsx", all_result)
 
 
 def write_excel_xls_append(path, value):
@@ -50,6 +50,7 @@ def write_excel_xls_append(path, value):
             new_worksheet.write(i + rows_old, j, value[i][j])  # 追加写入数据，注意是从i+rows_old行开始写入
     new_workbook.save(path)  # 保存工作簿
     print("xls格式表格【追加】写入数据成功！")
+
 
 if __name__ == '__main__':
     run()

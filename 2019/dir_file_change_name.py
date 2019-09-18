@@ -5,9 +5,11 @@
 # Date：          2019/9/17
 import glob, os
 
-path = r'C:\Users\micro\Desktop\2018流量'
-files = glob.glob(os.path.join(path, "*.csv"))
+path = r'C:\Users\micro\Desktop\2016流量'
+files = glob.glob(os.path.join(path, "*.xls"))
+print(files)
 for i in files:
-    newname = i.replace(r'(.*?至))', '')
-    os.rename(os.path.join(i),os.path.join(newname))
+    newname = i.replace(r'szffmr.com全站-受访域名(', '')
+    # newname = i + ".csv"
+    os.rename(os.path.join(i), os.path.join(newname))
     print('success : ' + newname)
