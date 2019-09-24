@@ -3,7 +3,7 @@ import requests
 import re
 from bs4 import BeautifulSoup
 
-url = 'http://mm.szffmr.com/'
+url = 'http://www.szffmr.com/'
 r = requests.get(url)
 r.encoding = 'gb2312'
 soup = BeautifulSoup(r.text, 'lxml')
