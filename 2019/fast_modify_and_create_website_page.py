@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\酷朔\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\美丽迎新专题\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "非凡酷塑冷冻减脂_瘦身塑形_深圳非凡医疗美容医院"
-    keywords = "非凡瘦身塑形,酷塑,酷塑冷冻减脂,减肥"
-    description = "非凡酷塑冷冻减脂是非入侵入不需要手术的一种减肥塑形方式，特有的冷冻疗法，不用再担心加肥瘦身困难，轻松瘦下来，达到身体曲线完美，皮肤紧致弹润，并且能达到稳定效果，不会再增脂。"
-    new_dir_name = "2019kusuo"
+    title = "美丽迎新·感恩盛典-10月整形优惠_深圳非凡医疗美容医院"
+    keywords = "10月优惠,国庆整形,国庆优惠,双眼皮,隆鼻,祛斑"
+    description = "10月整形优惠，祛痘68元、小气泡70元、祛斑200元、纹绣980元、双眼皮480元、隆鼻1680元、瘦脸针680元、牙齿冷光美白1280元起，美丽热线：0755-82281088。"
+    new_dir_name = "201910"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
