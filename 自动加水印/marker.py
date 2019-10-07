@@ -119,7 +119,7 @@ def gen_mark(args):
 
 
 def main():
-    path = r'C:\Users\micro\Documents\GitHub\Python-little-tool\watermarker\input'
+    path = r'D:\Python-little-tool\自动加水印\input'
     files = glob.glob(os.path.join(path, "*.*"))
     for i in files:
         parse = argparse.ArgumentParser()
