@@ -1,4 +1,9 @@
 # coding:utf-8
+# File Name：     快速修改多个专题
+# Description :
+# Author :       micro
+# Date：          2019/10/7
+# coding:utf-8
 # File Name：     fast_modify_special
 # Description :
 # Author :       micro
