@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\祛疤专题\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\盛典\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "非凡专业祛疤_针对各种疤痕_深圳非凡医疗美容医院"
-    keywords = "妊娠疤痕,手术疤痕,烧烫伤疤痕,痘坑痘印疤痕,专业祛疤"
-    description = "非凡皮肤医师团队在祛疤领域有多年的临床经验，针对妊娠疤痕,手术疤痕,烧烫伤疤痕,痘坑痘印疤痕等不同种类的疤痕实施不同方法，祛疤激光设备种类较多，激光药物等多效合一，能快速有效的恢复自然肌肤。美丽热线：0755-82281088"
-    new_dir_name = "2019quba"
+    title = "美耀盛世_2019非凡美丽盛典_11月整形优惠_深圳非凡医疗美容医院"
+    keywords = "11月整形优惠,回馈,秒杀,非凡盛典,双眼皮,隆鼻"
+    description = "非凡美丽盛典，11月整形优惠回馈客户，报名送进口玻尿酸、面膜、眼周抗衰、botox除皱， 超冰脱毛11元起、祛雀斑/痣3颗68元、除皱99元、私密净化保养100元、进口无痛种植牙/钉4000元、 牙齿冷光美白/次880元、微创双眼皮980元等，美丽热线：0755-82281088"
+    new_dir_name = "201911sd"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
@@ -52,7 +52,7 @@ def modify_file(file_path, new_dir_name, title, keywords, description):
     new_str_5 = '''<meta charset="gb2312">\n<base href="http://m.szffmr.com/zhuanti/%s/">''' % new_dir_name
     old_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">'''
     new_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">\n<meta name="format-detection" content="telephone=no" />\n<meta content="yes" name="apple-mobile-web-app-capable" />\n<meta content="black" name="apple-mobile-web-app-status-bar-style" />'''
-    old_str_7 = '''<title>闭馆</title>'''
+    old_str_7 = '''<title>酷朔</title>'''
     new_str_7 = '''<title>%s</title>\n<meta name="keywords" content="%s">\n<meta name="description" content="%s">''' % (
         title, keywords, description)
     file_data = ""

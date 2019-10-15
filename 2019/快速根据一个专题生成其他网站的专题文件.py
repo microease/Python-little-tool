@@ -10,13 +10,13 @@ import shutil
 def run():
     # 第一步 根据桌面地址创建好对应的文件夹
     # 在这里输入桌面文件夹地址
-    desktop = "C:\\Users\micro\Desktop\\"
+    desktop = "C:\\Users\micro\Desktop"
     # 在这里输入你想要的文件夹名称
-    new_dir_name = "2019quba"
+    new_dir_name = "201911sd"
     mszffmrcom, mmszffmrcom, m88833222com, mffyycc = mkdir(desktop, new_dir_name)
     # 第二步 根据读取的文件夹文件复制所有文件到每个网站对应的文件夹中 返回四个index.html地址
     # 在这里输入需要复制的专题地址
-    wait_copy_dir = r"C:\Users\micro\Desktop\祛疤专题"
+    wait_copy_dir = r"C:\Users\micro\Desktop\盛典01"
     mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex = \
         copy(wait_copy_dir, mszffmrcom, mmszffmrcom, m88833222com, mffyycc)
     # 第三步 分别修改四个网站的文件夹中index.html中的链接。
