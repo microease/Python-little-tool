@@ -7,8 +7,10 @@ str1 = "http://m.szffmr.com/zhuanti/"
 str2 = "http://mm.szffmr.com/zhuanti/"
 str3 = "http://m.88833222.com/zhuanti/"
 str4 = "http://m.ffyy.cc/zhuanti/"
+str5 = "http://wap.mr91.com/zhuanti/"
 dir_name = input("请输入文件夹名：")
 print(str1 + dir_name + "/")
 print(str2 + dir_name + "/")
 print(str3 + dir_name + "/")
 print(str4 + dir_name + "/")
+print(str5 + dir_name + "/")
