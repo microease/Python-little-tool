@@ -12,15 +12,15 @@ def run():
     # 在这里输入桌面文件夹地址
     desktop = "C:\\Users\micro\Desktop"
     # 在这里输入你想要的文件夹名称
-    new_dir_name = "201911sd"
-    mszffmrcom, mmszffmrcom, m88833222com, mffyycc = mkdir(desktop, new_dir_name)
+    new_dir_name = "xiaovlian"
+    mszffmrcom, mmszffmrcom, m88833222com, mffyycc,wapmr91= mkdir(desktop, new_dir_name)
     # 第二步 根据读取的文件夹文件复制所有文件到每个网站对应的文件夹中 返回四个index.html地址
     # 在这里输入需要复制的专题地址
-    wait_copy_dir = r"C:\Users\micro\Desktop\盛典01"
-    mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex = \
-        copy(wait_copy_dir, mszffmrcom, mmszffmrcom, m88833222com, mffyycc)
+    wait_copy_dir = r"C:\Users\micro\Desktop\xiaovlian"
+    mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex,wapmr91index = \
+        copy(wait_copy_dir, mszffmrcom, mmszffmrcom, m88833222com, mffyycc,wapmr91)
     # 第三步 分别修改四个网站的文件夹中index.html中的链接。
-    modify_link(mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex)
+    modify_link(mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex,wapmr91index)
 
 
 def mkdir(desktop, new_dir_name):
@@ -28,34 +28,39 @@ def mkdir(desktop, new_dir_name):
     mmszffmrcom = desktop + "/网站文件/szffmr/mm/zhuanti/" + new_dir_name
     m88833222com = desktop + "/网站文件/www.88833222.com/wap/zhuanti/" + new_dir_name
     mffyycc = desktop + "/网站文件/www.ffyy.cc/wap/zhuanti/" + new_dir_name
-    return mszffmrcom, mmszffmrcom, m88833222com, mffyycc
+    wapmr91 = desktop + "/网站文件/wap.mr91.com/zhuanti/" + new_dir_name
+    return mszffmrcom, mmszffmrcom, m88833222com, mffyycc, wapmr91
 
 
-def copy(wait_copy_dir, mszffmrcom, mmszffmrcom, m88833222com, mffyycc):
+def copy(wait_copy_dir, mszffmrcom, mmszffmrcom, m88833222com, mffyycc, wapmr91):
     if (not os.path.exists(mszffmrcom)):
         shutil.copytree(wait_copy_dir, mszffmrcom)
         shutil.copytree(wait_copy_dir, mmszffmrcom)
         shutil.copytree(wait_copy_dir, m88833222com)
         shutil.copytree(wait_copy_dir, mffyycc)
+        shutil.copytree(wait_copy_dir, wapmr91)
     else:
         print("地址存在，删除文件夹后重试")
     mszffmrcomindex = mszffmrcom + "/index.html"
     mmszffmrcomindex = mmszffmrcom + "/index.html"
     m88833222comindex = m88833222com + "/index.html"
     mffyyccindex = mffyycc + "/index.html"
-    return mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex
+    wapmr91index = wapmr91 + "/index.html"
+    return mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex, wapmr91index
 
 
-def modify_link(mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex):
+def modify_link(mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex, wapmr91index):
     if (os.path.exists(mszffmrcomindex)):
         print(mmszffmrcomindex + "文件存在，可以修改！")
         old_str_1 = '''m.szffmr.com'''
         new_str_1 = '''mm.szffmr.com'''
         new_str_2 = '''m.88833222.com'''
         new_str_3 = '''m.ffyy.cc'''
+        new_str_4 = '''wap.mr91.com'''
         mmszffmrcom_file_data = ""
         m88833222com_file_data = ""
         mffyycc_file_data = ""
+        wapmr91_file_data = ""
         # 修改mmszffmrcom
         with open(mmszffmrcomindex, "r", encoding="GB18030") as f:
             for line in f:
@@ -83,6 +88,15 @@ def modify_link(mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccind
                 mffyycc_file_data += line
         with open(mffyyccindex, "w", encoding="GB18030") as f:
             f.write(mffyycc_file_data)
+        # 修改wapmr91index
+        with open(wapmr91index, "r", encoding="GB18030") as f:
+            for line in f:
+                if old_str_1 in line:
+                    print("发现m.szffmr.com,修改ing")
+                    line = line.replace(old_str_1, new_str_4)
+                wapmr91_file_data += line
+        with open(wapmr91index, "w", encoding="GB18030") as f:
+            f.write(wapmr91_file_data)
 
 
 if __name__ == '__main__':

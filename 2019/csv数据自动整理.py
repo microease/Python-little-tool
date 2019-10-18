@@ -13,6 +13,7 @@ def run():
     #  第一步 遍历读取文件夹，获取每个csv的路径
     path = r'C:\Users\micro\Desktop\2019流量'
     files = glob.glob(os.path.join(path, "*.csv"))
+    print(files)
     # 第二步 分别遍历每个文件,并获取所需要网站的UV
     all_result = []
     for file in files:
