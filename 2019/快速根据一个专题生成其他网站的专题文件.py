@@ -16,7 +16,7 @@ def run():
     mszffmrcom, mmszffmrcom, m88833222com, mffyycc,wapmr91= mkdir(desktop, new_dir_name)
     # 第二步 根据读取的文件夹文件复制所有文件到每个网站对应的文件夹中 返回四个index.html地址
     # 在这里输入需要复制的专题地址
-    wait_copy_dir = r"C:\Users\micro\Desktop\形象管理手机端"
+    wait_copy_dir = r"C:\Users\micro\Desktop\2019xxgl"
     mszffmrcomindex, mmszffmrcomindex, m88833222comindex, mffyyccindex,wapmr91index = \
         copy(wait_copy_dir, mszffmrcom, mmszffmrcom, m88833222com, mffyycc,wapmr91)
     # 第三步 分别修改四个网站的文件夹中index.html中的链接。
