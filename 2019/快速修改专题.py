@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\形象管理手机端\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\祛疤痕信息流\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "形象密码管理_女性一生的必修课_深圳非凡医疗美容医院"
-    keywords = "形象管理,美丽,妆发,气质修炼"
-    description = "美学潮流时代，形象密码管理是女性一生的必修课，非凡形象密码管理中心，从外貌-全身-妆发-气质，全身心提升你的美丽与气质，增强你的样貌竞争力，让你魅力非凡。美丽热线：0755-82281088"
-    new_dir_name = "2019xxgl"
+    title = "祛疤痕-深圳非凡医疗美容医院"
+    keywords = "祛疤痕"
+    description = "祛疤痕-深圳非凡医疗美容医院.美丽热线：0755-82281088"
+    new_dir_name = "2019qbhxxl"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
@@ -52,7 +52,7 @@ def modify_file(file_path, new_dir_name, title, keywords, description):
     new_str_5 = '''<meta charset="gb2312">\n<base href="http://m.szffmr.com/zhuanti/%s/">''' % new_dir_name
     old_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">'''
     new_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">\n<meta name="format-detection" content="telephone=no" />\n<meta content="yes" name="apple-mobile-web-app-capable" />\n<meta content="black" name="apple-mobile-web-app-status-bar-style" />'''
-    old_str_7 = '''<title>抽奖专题</title>'''
+    old_str_7 = '''<title>祛疤痕信息流</title>'''
     new_str_7 = '''<title>%s</title>\n<meta name="keywords" content="%s">\n<meta name="description" content="%s">''' % (
         title, keywords, description)
     file_data = ""
