@@ -9,7 +9,7 @@ tinify.key = 'SHhhzPb7lNm01Gr74j2TGmfxyDrZYpXs'
 print("欢迎使用胡炎凯开发的自动图片无损压缩工具。请输入你要转换的图片地址路径,注意必须是绝对地址：")
 
 # path = input()  # 图片存放的路径
-path = r"D:\OneDrive - Merced College\EKEN\运动相机配件素材\1相机原装配件照片\遥控器腕带\修图版带水印"
+path = r"C:\Users\micro\Desktop\医院环境图片2"
 print(path)
 for dirpath, dirs, files in os.walk(path):
     for file in files:
