@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\祛眼袋\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\玻尿酸注射除皱\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "祛眼袋_非凡综合祛眼袋_深圳非凡医疗美容医院"
-    keywords = "祛眼袋，眼袋，显老"
-    description = "非凡眼部整形团队对个人眼部情况，科学设计去眼袋手术方案，根据眼部情况以及求美者的要求进行针对性治疗，对眼袋、黑眼圈、细纹等眼部问题治疗。塑造自然灵动美眼，让求美者的眼部变得自然美观。美丽热线：0755-82281088"
-    new_dir_name = "2019quyandai"
+    title = "除皱_玻尿酸注射除皱_深圳非凡医疗美容医院"
+    keywords = "除皱,玻尿酸除皱,玻尿酸注射除皱,衰老"
+    description = "非凡玻尿酸注射除皱 能轻松达到除皱效果，更能刺激胶原蛋白新生解决面部松、皱、凹等三大衰老问题，利用午休的时间就能达到面部整体年轻化，鱼尾纹、川字纹、额头纹、法令纹、口周皱纹等，令面部恢复紧致光滑。美丽热线：0755-82281088"
+    new_dir_name = "2019zscz"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
@@ -52,7 +52,7 @@ def modify_file(file_path, new_dir_name, title, keywords, description):
     new_str_5 = '''<meta charset="gb2312">\n<base href="http://m.szffmr.com/zhuanti/%s/">''' % new_dir_name
     old_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">'''
     new_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">\n<meta name="format-detection" content="telephone=no" />\n<meta content="yes" name="apple-mobile-web-app-capable" />\n<meta content="black" name="apple-mobile-web-app-status-bar-style" />'''
-    old_str_7 = '''<title>抽奖专题</title>'''
+    old_str_7 = '''<title>玻尿酸除皱</title>'''
     new_str_7 = '''<title>%s</title>\n<meta name="keywords" content="%s">\n<meta name="description" content="%s">''' % (
         title, keywords, description)
     file_data = ""
