@@ -19,25 +19,25 @@ def get_all_html():
 
 
 def change_html(files):
+    count = 1
     for i in files:
         htmlfile = open(i, 'r', encoding='utf-8')
         htmlhandle = htmlfile.read()
         soup = BeautifulSoup(htmlhandle, 'lxml')
         trs = soup.find_all("tr", style="display:none")
-        for j in trs:
-            return j
+        for tr in trs:
+            file_root = r"C:\Users\micro\Desktop\新建文件夹2\\"
+            print(file_root + str(count) + ".htm")
+            f = open(file_root + str(count) + ".htm", mode="w", encoding="utf-8")
+            f.write(str(tr))
+            f.close()
+            count += 1
 
 
-def save_txt(j):
-    file_root = r"C:\Users\micro\Desktop\新建文件夹2\\"
-    for i in range(100):
-        print(file_root+str(i)+".txt")
-        fd = open(file_root+str(i)+".txt", mode="w", encoding="utf-8")
 
 def run():
     files = get_all_html()
-    j = change_html(files)
-    save_txt(j)
+    tr = change_html(files)
 
 
 if __name__ == '__main__':
