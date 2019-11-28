@@ -22,5 +22,5 @@ def del_file(path_data):
             del_file(file_data)
 
 
-path_data = r"D:\非凡商务通聊天记录已处理\20140101-20150101用户排序一般"
+path_data = r"D:\非凡商务通聊天记录已处理\20140101-20150101用户排序一般\\"
 del_file(path_data)

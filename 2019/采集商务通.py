@@ -13,7 +13,7 @@ import requests
 
 
 def get_all_html():
-    file_root = r"D:\OneDrive - Merced College\非凡商务通聊天记录\20140101-20150101用户排序一般\\"
+    file_root = r"D:\OneDrive - Merced College\非凡商务通聊天记录\20150101-20160101用户排序极佳\\"
     files = glob.glob(os.path.join(file_root, "*.htm"))
     return files
 
@@ -26,13 +26,12 @@ def change_html(files):
         soup = BeautifulSoup(htmlhandle, 'lxml')
         trs = soup.find_all("tr", style="display:none")
         for tr in trs:
-            file_root = r"D:\非凡商务通聊天记录已处理\20140101-20150101用户排序一般\\"
+            file_root = r"D:\非凡商务通聊天记录已处理\20150101-20160101用户排序极佳\\"
             print(file_root + str(count) + ".htm")
             f = open(file_root + str(count) + ".htm", mode="w", encoding="utf-8")
             f.write(str(tr))
             f.close()
             count += 1
-
 
 
 def run():
