@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\胸部整形\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\余永刚\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "隆胸_胸部综合整形_深圳非凡医疗美容医院"
-    keywords = "胸部整形,巨乳缩小,大小胸,胸部下垂,隆胸"
-    description = "非凡胸部整形团队针对个人胸部情况及个人要求，科学设计美胸手术方案，进行针对性治疗。对平胸、胸部下垂、大小胸、巨乳等胸部问题进行矫正治疗或塑形。塑造自然动感胸部曲线，让求美者的胸部变得自然美观。美丽热线：0755-82281088"
-    new_dir_name = "2019longxiong"
+    title = "非凡少女线雕_余永刚技术院长_深圳非凡医疗美容医院"
+    keywords = "线雕,私密线雕,胸部线雕,余永刚,线雕逆龄"
+    description = "非凡线雕提升，不仅是针对面部提升，还有胸部线雕提升、臀部线雕提升、私密紧致线雕等，通过全身线雕提升松弛、下垂皮肤。更有线雕界实力派余永刚院长亲自打造，一提一拉逆龄紧致，让您恢复年轻光彩。美丽热线：0755-82281088"
+    new_dir_name = "doctoryu"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
@@ -52,7 +52,7 @@ def modify_file(file_path, new_dir_name, title, keywords, description):
     new_str_5 = '''<meta charset="gb2312">\n<base href="http://m.szffmr.com/zhuanti/%s/">''' % new_dir_name
     old_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">'''
     new_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">\n<meta name="format-detection" content="telephone=no" />\n<meta content="yes" name="apple-mobile-web-app-capable" />\n<meta content="black" name="apple-mobile-web-app-status-bar-style" />'''
-    old_str_7 = '''<title>玻尿酸除皱</title>'''
+    old_str_7 = '''<title>抽奖专题</title>'''
     new_str_7 = '''<title>%s</title>\n<meta name="keywords" content="%s">\n<meta name="description" content="%s">''' % (
         title, keywords, description)
     file_data = ""
