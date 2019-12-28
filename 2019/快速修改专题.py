@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\余永刚\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\隆鼻多少钱\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "非凡少女线雕_余永刚技术院长_深圳非凡医疗美容医院"
-    keywords = "线雕,私密线雕,胸部线雕,余永刚,线雕逆龄"
-    description = "非凡线雕提升，不仅是针对面部提升，还有胸部线雕提升、臀部线雕提升、私密紧致线雕等，通过全身线雕提升松弛、下垂皮肤。更有线雕界实力派余永刚院长亲自打造，一提一拉逆龄紧致，让您恢复年轻光彩。美丽热线：0755-82281088"
-    new_dir_name = "doctoryu"
+    title = "隆鼻多少钱？_鼻整形价格_深圳非凡医疗美容医院"
+    keywords = "隆鼻,鼻整形,综合隆鼻,玻尿酸隆鼻"
+    description = "隆鼻费用太高？不知道自己适合哪种隆鼻方式？非凡医疗美容医院隆鼻价格实惠合理，多种隆鼻方法：自体软骨隆鼻、假体隆鼻、注射隆鼻等为你打造挺翘美鼻，专业隆鼻医师团队为你的美丽保驾护航！美丽热线：0755-82281088"
+    new_dir_name = "lbdsq"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
