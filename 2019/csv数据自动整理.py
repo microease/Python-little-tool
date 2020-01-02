@@ -19,6 +19,8 @@ def run():
     for file in files:
         csvFile = open(file, "r", encoding='gb18030', errors='ignore')
         reader = csv.reader(csvFile)
+        m_ffyy_cc_uv = 0
+        www_ffyy_cc_uv = 0
         for item in reader:
             if (len(item) > 1):
                 if (item[0] == "www.szffmr.com"):

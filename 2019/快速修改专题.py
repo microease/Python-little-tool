@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\余永刚\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\盆骨修复术\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "非凡少女线雕_余永刚技术院长_深圳非凡医疗美容医院"
-    keywords = "线雕,私密线雕,胸部线雕,余永刚,线雕逆龄"
-    description = "非凡线雕提升，不仅是针对面部提升，还有胸部线雕提升、臀部线雕提升、私密紧致线雕等，通过全身线雕提升松弛、下垂皮肤。更有线雕界实力派余永刚院长亲自打造，一提一拉逆龄紧致，让您恢复年轻光彩。美丽热线：0755-82281088"
-    new_dir_name = "doctoryu"
+    title = "产后骨盆恢复_深圳非凡医疗美容医院"
+    keywords = "产后修复,骨盆恢复,盆骨修复"
+    description = "非凡魅力女人馆致力于女性健康和美丽，为您提供个性化贴心私密产后恢复服务。非凡魅力女人馆特色骨盆恢复体验佳、反馈好、性价比高，拥有专业的技术团队及高端的仪器，特有修复手法过程松解，让妈妈在愉悦之中完成受损部位的恢复，为您找回产前的少女状态。"
+    new_dir_name = "2020chgpxf"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
