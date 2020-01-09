@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\盆骨修复术\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\品牌专题\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "产后骨盆恢复_深圳非凡医疗美容医院"
-    keywords = "产后修复,骨盆恢复,盆骨修复"
-    description = "非凡魅力女人馆致力于女性健康和美丽，为您提供个性化贴心私密产后恢复服务。非凡魅力女人馆特色骨盆恢复体验佳、反馈好、性价比高，拥有专业的技术团队及高端的仪器，特有修复手法过程松解，让妈妈在愉悦之中完成受损部位的恢复，为您找回产前的少女状态。"
-    new_dir_name = "2020chgpxf"
+    title = "深圳美容整形机构非凡医院品牌介绍_深圳医疗整形医院_深圳整容专科医院"
+    keywords = "非凡医院,深圳医疗整形医院,深圳整容专科医院,深圳美容整形机构"
+    description = "深圳非凡医疗美容医院是经深圳市卫人委批准成立的深圳整容专科医院，是深圳较早一批成立的医疗整形医院，汇聚中港台医美专家，超万例美容案例，明星名媛汇聚，是深圳美容整形机构前沿品牌。"
+    new_dir_name = "2020pinpai"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
