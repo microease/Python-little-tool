@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\盆骨修复术\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\闭关\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "产后骨盆恢复_深圳非凡医疗美容医院"
-    keywords = "产后修复,骨盆恢复,盆骨修复"
-    description = "非凡魅力女人馆致力于女性健康和美丽，为您提供个性化贴心私密产后恢复服务。非凡魅力女人馆特色骨盆恢复体验佳、反馈好、性价比高，拥有专业的技术团队及高端的仪器，特有修复手法过程松解，让妈妈在愉悦之中完成受损部位的恢复，为您找回产前的少女状态。"
-    new_dir_name = "2020chgpxf"
+    title = "美丽返场季·嗨购小长假_全场爆款钜惠_深圳非凡医疗美容医院"
+    keywords = "四月,整形特惠,隆鼻,价格,美丽"
+    description = "非凡美丽返场季·嗨购小长假，4月3日-4月10美丽一触即发，到院送精美礼品，小V脸免费送，消费满额砸金蛋赢取豪礼，消费还全返京东商品，人气爆款项目低到不敢想，这次变美的特惠千万不要错过，美丽热线：0755-82281088"
+    new_dir_name = "20200404bg"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
@@ -52,7 +52,7 @@ def modify_file(file_path, new_dir_name, title, keywords, description):
     new_str_5 = '''<meta charset="gb2312">\n<base href="http://m.szffmr.com/zhuanti/%s/">''' % new_dir_name
     old_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">'''
     new_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">\n<meta name="format-detection" content="telephone=no" />\n<meta content="yes" name="apple-mobile-web-app-capable" />\n<meta content="black" name="apple-mobile-web-app-status-bar-style" />'''
-    old_str_7 = '''<title>抽奖专题</title>'''
+    old_str_7 = '''<title>闭关专题</title>'''
     new_str_7 = '''<title>%s</title>\n<meta name="keywords" content="%s">\n<meta name="description" content="%s">''' % (
         title, keywords, description)
     file_data = ""
