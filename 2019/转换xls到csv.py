@@ -31,7 +31,7 @@ def read_path(path):
 # 主函数
 def main():
     # 源文件路径
-    source = r"C:\Users\micro\Desktop\2017流量"
+    source = r"C:\Users\micro\Desktop\新建文件夹"
 
     # 目标文件路径
     ob = r"D:\1"
