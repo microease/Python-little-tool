@@ -37,7 +37,7 @@ def run():
                     www_ffyy_cc_uv = item[2]
         result = [www_szffmr_com_uv, m_szffmr_com_uv, mm_szffmr_com_uv, m_88833222_com_uv, m_ffyy_cc_uv, www_ffyy_cc_uv]
         all_result.append(result)
-    write_excel_xls_append(r"C:\Users\micro\Desktop\2019.xlsx", all_result)
+    write_excel_xls_append(r"C:\Users\micro\Desktop\2020.xlsx", all_result)
 
 
 def write_excel_xls_append(path, value):

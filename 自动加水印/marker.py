@@ -127,10 +127,10 @@ def main():
     for i in files:
         parse = argparse.ArgumentParser()
         parse.add_argument("-f", "--file", default=i, type=str, help="image file path or directory")
-        parse.add_argument("-m", "--mark", default="深圳慧商智选网络科技有限公司", type=str, help="watermark content")
+        parse.add_argument("-m", "--mark", default="仅限雨果网认证使用", type=str, help="watermark content")
         # parse.add_argument("-m", "--mark", default="Shenzhen HuiShangZhiXuan Network Technology Co., Ltd.", type=str, help="watermark content")
         parse.add_argument("-o", "--out", default="./output", help="image output directory, default is ./output")
-        parse.add_argument("-c", "--color", default="#FFFFFF", type=str,help="text color like '#000000', default is #8B8B1B")
+        parse.add_argument("-c", "--color", default="#000000", type=str,help="text color like '#000000', default is #8B8B1B")
         parse.add_argument("-s", "--space", default=100, type=int, help="space between watermarks, default is 75")
         parse.add_argument("-a", "--angle", default=45, type=int, help="rotate angle of watermarks, default is 30")
         parse.add_argument("--size", default=50, type=int, help="font size of text, default is 50")

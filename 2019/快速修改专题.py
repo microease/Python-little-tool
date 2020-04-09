@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\双眼皮专题\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\美丽返场\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "双眼皮_翘睫双眼皮_深圳非凡医疗美容医院"
-    keywords = "眼部整形,双眼皮,自然,翘睫,双眼皮"
-    description = "非凡翘睫双眼皮，打造妈生款明亮美眼，眼部医师团队根据黄金美学设计，进行一对一定制美眼，通过精细手法增大双眼比例、增加瞳孔反射亮度，分层切开更精细，恢复时间缩短，并且消除双眼皮术后的肿胀、恢复慢、肉条感等顾虑，为您打造明亮、自信双眸。美丽热线：0755-82281088"
-    new_dir_name = "202003syp"
+    title = "激情4月·美力新生-美丽返场季_深圳非凡医疗美容医院"
+    keywords = "美丽返场季,非凡价格表,深圳非凡医疗美容医院活动"
+    description = "积分翻倍，新品体验。美力膨胀金，充值优惠！春生万物，颜值复苏，蛰伏一季的美丽，就此绽放。让美力新生，让我们与美同行！深圳非凡医疗美容医院美丽热线：0755-82281088"
+    new_dir_name = "202004mlfc"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
@@ -52,7 +52,7 @@ def modify_file(file_path, new_dir_name, title, keywords, description):
     new_str_5 = '''<meta charset="gb2312">\n<base href="http://m.szffmr.com/zhuanti/%s/">''' % new_dir_name
     old_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">'''
     new_str_6 = '''<meta http-equiv="X-UA-Compatible" content="ie=edge">\n<meta name="format-detection" content="telephone=no" />\n<meta content="yes" name="apple-mobile-web-app-capable" />\n<meta content="black" name="apple-mobile-web-app-status-bar-style" />'''
-    old_str_7 = '''<title>双眼皮</title>'''
+    old_str_7 = '''<title>抽奖专题</title>'''
     new_str_7 = '''<title>%s</title>\n<meta name="keywords" content="%s">\n<meta name="description" content="%s">''' % (
         title, keywords, description)
     file_data = ""
