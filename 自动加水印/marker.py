@@ -129,7 +129,7 @@ def main():
         parse = argparse.ArgumentParser()
         parse.add_argument("-f", "--file", default=i, type=str, help="image file path or directory")
         # parse.add_argument("-m", "--mark", default="DHgate.com:eken_store", type=str, help="watermark content")
-        parse.add_argument("-m", "--mark", default="仅限兰亭集势审核使用", type=str, help="watermark content")
+        parse.add_argument("-m", "--mark", default="仅限雨果网验证使用", type=str, help="watermark content")
         # parse.add_argument("-m", "--mark", default="Shenzhen HuiShangZhiXuan Network Technology Co., Ltd.", type=str, help="watermark content")
         parse.add_argument("-o", "--out", default="./test", help="image output directory, default is ./output")
         parse.add_argument("-c", "--color", default="#000000", type=str,
