@@ -10,8 +10,6 @@ import glob, os
 from PIL import Image, ImageFont, ImageDraw, ImageEnhance, ImageChops
 
 
-
-
 def add_mark(imagePath, mark, args):
     '''
     添加水印，然后保存图片
@@ -118,19 +116,24 @@ def gen_mark(args):
 
     return mark_im
 
+
 TTF_FONT = 0
+
+
 def main():
     global TTF_FONT
     TTF_FONT = u'./font/SourceHanSansCN-Medium.otf'
-    path = r'D:\Github\Python-little-tool\自动加水印\input'
+    path = r'D:\Github\Python-little-tool\自动加水印\test'
     files = glob.glob(os.path.join(path, "*.*"))
     for i in files:
         parse = argparse.ArgumentParser()
         parse.add_argument("-f", "--file", default=i, type=str, help="image file path or directory")
-        parse.add_argument("-m", "--mark", default="仅限雨果网认证使用", type=str, help="watermark content")
+        # parse.add_argument("-m", "--mark", default="DHgate.com:eken_store", type=str, help="watermark content")
+        parse.add_argument("-m", "--mark", default="仅限雨果网验证使用", type=str, help="watermark content")
         # parse.add_argument("-m", "--mark", default="Shenzhen HuiShangZhiXuan Network Technology Co., Ltd.", type=str, help="watermark content")
-        parse.add_argument("-o", "--out", default="./output", help="image output directory, default is ./output")
-        parse.add_argument("-c", "--color", default="#000000", type=str,help="text color like '#000000', default is #8B8B1B")
+        parse.add_argument("-o", "--out", default="./test", help="image output directory, default is ./output")
+        parse.add_argument("-c", "--color", default="#000000", type=str,
+                           help="text color like '#000000', default is #8B8B1B")
         parse.add_argument("-s", "--space", default=100, type=int, help="space between watermarks, default is 75")
         parse.add_argument("-a", "--angle", default=45, type=int, help="rotate angle of watermarks, default is 30")
         parse.add_argument("--size", default=50, type=int, help="font size of text, default is 50")
