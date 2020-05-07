@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\zonghexiongbu\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\测试\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "隆胸_胸部整形_深圳非凡医疗美容医院"
-    keywords = "胸部整形、大小胸、胸部下垂、隆胸"
-    description = "非凡胸部整形团队针对个人胸部情况及个人要求，科学设计美胸手术方案，进行针对性治疗。对平胸、胸部下垂、大小胸、巨乳等胸部问题进行矫正治疗或塑形。塑造自然动感胸部曲线，让求美者的胸部变得自然美观。美丽热线：0755-82281088"
-    new_dir_name = "202004zhxbzx"
+    title = "寻找美丽同行者_全城免费招募_深圳非凡医疗美容医院"
+    keywords = "模特招募,深圳非凡医疗美容医院"
+    description = "深圳非凡医疗美容医院全城免费招募美丽同行者，也许你因为眼睛不够大，鼻子不够挺，身材不够好。自卑,苦恼，郁闷，其实你只是缺少一个变美的机会！"
+    new_dir_name = "202005xzmltxz"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
