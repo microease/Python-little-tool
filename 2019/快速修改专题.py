@@ -10,15 +10,15 @@ import codecs
 
 def run():
     # 第一步：找到要修改的文件并判断文件是否存在
-    file_path = find_file("C:\\Users\micro\Desktop\原版\\")  # 此处填写文件夹路径
+    file_path = find_file("C:\\Users\micro\Desktop\私密专题\\")  # 此处填写文件夹路径
     # 第二步：修改文件1：在body前加调用JS代码
     # 第三步：所有的商务通链接加nofollow
     # 第四步 删除headfoot.css
     # 第四步：读取TDK和设置的文件夹名，替换原本的title以前的字符
-    title = "盛夏耀青春_【聚美618,全民嗨购】-深圳非凡医疗美容医院2020年618活动"
-    keywords = "深圳非凡医疗美容医院"
-    description = "【到院送面膜,年中大促,钜惠嗨购,优惠满减券】☆☆☆☆☆深圳非凡医疗美容医院2020年618活动六大惊喜好礼，青春闪耀一夏！聚美618,全民嗨购"
-    new_dir_name = "202006sxyqc"
+    title = "非凡魅力女人馆——深圳非凡医疗美容医院"
+    keywords = "非凡魅力女人馆,深圳非凡医疗美容医院"
+    description = "女性私密养护管理——非凡魅力女人馆：呵护私密花园健康，带给女性幸福与快乐。【暖巢护宫，私密紧致，私密粉嫩，产后护理】"
+    new_dir_name = "202007simi"
     file_path = modify_file(file_path, new_dir_name, title, keywords, description)
     # 第五步：更换编码为GB2312
     file_path = convert_to_gb2312(file_path)
